@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>st2</title>
+
+<style>
+    body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+</style>
+
+<style>
+    body {
+      font-family: 'Helvetica', sans-serif;
+      background-color: #e7e7e7;
+      color: #444;
+    }
+    
+    form {
+      border: none;
+      padding: 20px;
+      margin: 20px auto;
+      width: 40%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    label {
+      margin-top: 15px;
+      display: block;
+    }
+    
+    input, select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #5cb85c;
+      border-radius: 4px;
+    }
+    
+    input[type="submit"] {
+      background-color: #5cb85c;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #4cae4c;
+    }
+    </style>
+    
+
+<script>
+function mostrarMensaje() {
+  alert("Actualmente no puedes seguir con tu registro debido a que la web no ha sido finalizada.");
+  // Para prevenir que el formulario se envíe y recargue la página
+  return false;
+}
+</script>
+</head>
+<body>
+    <center>
+        <h1>Registro</h1>
+        <form onsubmit="return mostrarMensaje()">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="rol">Rol</label>
+            <select id="rol" name="rol" required>
+                <option value="rector">Rector(a)</option>
+                <option value="coordinador">Coordinador(a)</option>
+                <option value="secretaria">Secretaria(o)</option>
+                <option value="docente">Docente</option>
+                <option value="estudiante">Estudiante</option>
+            </select><br><br>
+            <input type="submit" value="Enviar">
+</form>
+</center>
+</body>
+</html>
